@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@700&family=Space+Mono:wght@400;700&display=swap');
+
+/* variables */
+:root {
+   --inconsolataFont: 'Inconsolata', sans-serif;
+   --spaceMonoFont: 'Space Mono', sans-serif;
+   --blackColor: #333333;
+   --greyColor: #4F4F4F;
+   --boldWeigth: 700;
+   --regularWeight: 400;
+}
+
+html {
+   font-size: 16px;
+}
+
+body {
+   height: 100vh;
+   font-family: var(--spaceMonoFont);
+   background: #f2f2f2;
+}
+
+.container {
+   width: 90%;
+   max-width: 1200px;
+   margin: 0 auto;
+}
+
+/*----------------------------- HEADER ------------------------------*/
+.header {
+   width: 100%;
+}
+
+.header__message {
+   text-transform: uppercase;
+   font-family: var(--inconsolataFont);
+   font-weight: var(--boldWeigth);
+   font-size: 1.5rem;
+}
+
+/*----------------------------- WRAPPER SECTION ------------------------------*/
+.wrapper {
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   gap: 20px;
+   place-items: center;
+   margin-bottom: 40px;
+}
+
+/*----------------------------- WRAPPER PICTURE ------------------------------*/
+.wrapper__illustration {
+   width: auto;
+}
+
+.wrapper__pic {
+   width: 50vw;
+   animation: bottomTop 2s ease infinite;
+}
+
+@keyframes bottomTop {
+   0% {transform: translateY(0);}
+   50% {transform: translateY(10px);}
+   100% {transform: translateY(0);}
+}
+
+/*----------------------------- WRAPPER MESSAGE ------------------------------*/
+.wrapper-message__title {
+   margin: 0;
+   color: var(--blackColor);
+   font-size: 3rem;
+}
+
+.wrapper-message__info {
+   width: 70%;
+   margin-bottom: 40px;
+   line-height: 1.5rem;
+   font-weight: var(--regularWeight);
+   color: var(--greyColor);
+}
+
+.wrapper-message__button {
+   padding: 20px;
+   text-transform: uppercase;
+   font-family: var(--spaceMonoFont);
+   border: none;
+   color: #FFF;
+   background: var(--blackColor);
+   cursor: pointer;
+}
+
+.wrapper-message__button:hover {
+   transform: translateY(-5px);
+   transition: all 300ms ease;
+}
+
+/*----------------------------- FOOTER ------------------------------*/
+.footer {
+   text-align: center;
+}
+
+.footer a {
+   text-decoration: none;
+   color: var(--greyColor);
+}
+
+.author {
+   font-weight: bold;
+   text-decoration: underline;
+}
+
+@media screen and (max-width: 600px) {
+   .wrapper {
+      grid-template-columns: 1fr;
+   }
+
+   .wrapper__pic {
+      min-width: 200px;
+      max-width: 600px;
+   }
+
+   .wrapper-message__info {
+      width: 100%;
+   }
+}
+
+@media screen and (max-width: 400px) {
+   html {
+      font-size: 14px;
+   }
+
+   .footer {
+      font-size: 0.8rem;
+   }
+}
